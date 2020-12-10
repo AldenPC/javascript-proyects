@@ -21,5 +21,3 @@ describe('Checking focus of search text', () => {
 });
 
 
-
-
