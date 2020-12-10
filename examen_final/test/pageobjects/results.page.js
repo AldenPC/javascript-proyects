@@ -7,9 +7,6 @@ class HomePage extends Page {
     /**
      * define selectors using getter methods
      */
-    get btnSearch () { return $('.btn_search') }
-    get btnOcupational () { return $('label[for=ocupational]') }
-    get searchInput () { return $('#search-input') }
     get firstResult () { return $('.col-lg-7 :first-child h3') }
     get btnFisica () { return $('//a[contains(text(),"Física")]') }
     get btnLenguaje () { return $('//a[contains(text(),"Lenguaje")]') }
