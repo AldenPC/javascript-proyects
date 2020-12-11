@@ -3,7 +3,7 @@ const Page = require('./page');
 /**
  * sub page containing specific selectors and methods for a specific page
  */
-class HomePage extends Page {
+class ResultPage extends Page {
     /**
      * define selectors using getter methods
      */
@@ -11,39 +11,46 @@ class HomePage extends Page {
     get btnFisica () { return $('//a[contains(text(),"Física")]') }
     get btnLenguaje () { return $('//a[contains(text(),"Lenguaje")]') }
     get btnOcupacional () { return $('//a[contains(text(),"Ocupacional")]') }
+    get btnSearch () { return $('[value="Buscar"]') }
+    get txtSearch () { return $('input[type="text"]') }
+    get btnMap () { return $('.icon-map-1') }
+    get googleMap () { return $('.google-map') }
+    get btnList () { return $('.icon-th-list') }
 
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
      */
-    clickSearch () {
-        
-        this.btnSearch.click(); 
-    }
-
-     focusSearch () {
-        this.btnOcupational.click(); 
-    }
-
-    searchText () {
-        this.searchInput.setValue("Maria"); 
-        this.btnSearch.click(); 
-    }
 
     clickPhisicalSpecialty(){
-        //this.btnSearch.click(); 
         this.btnFisica.click();
     }
 
     clickLanguageSpecialty(){
-        //this.btnSearch.click(); 
-        this.btnFisica.click();
+        this.btnLenguaje.click();
     }
 
     clickOcupationalSpecialty(){
-        //this.btnSearch.click(); 
-        this.btnFisica.click();
+        this.btnOcupacional.click();
     }
+
+    resultsSearch(){
+        this.txtSearch.setValue("Maria");
+        this.btnSearch.click();
+    }  
+
+    resultsMapNotVisible(){
+        this.txtSearch.setValue("Maria");
+        this.btnSearch.click();
+        this.btnMap.click();
+    }  
+
+    resultsMapVisible(){
+        this.txtSearch.setValue("Maria");
+        this.btnSearch.click();
+        this.btnMap.click();
+        this.btnList.click();
+    }  
 
     /**
      * overwrite specifc options to adapt it to page object
@@ -53,4 +60,4 @@ class HomePage extends Page {
     }
 }
 
-module.exports = new HomePage();
+module.exports = new ResultPage();

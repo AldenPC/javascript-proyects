@@ -11,9 +11,6 @@ class HomePage extends Page {
     get btnOcupational () { return $('label[for=ocupational]') }
     get searchInput () { return $('#search-input') }
     get firstResult () { return $('.col-lg-7 :first-child h3') }
-    get btnFisica () { return $('//a[contains(text(),"Física")]') }
-    get btnLenguaje () { return $('//a[contains(text(),"Lenguaje")]') }
-    get btnOcupacional () { return $('//a[contains(text(),"Ocupacional")]') }
 
     /**
      * a method to encapsule automation code to interact with the page
@@ -31,21 +28,6 @@ class HomePage extends Page {
     searchText () {
         this.searchInput.setValue("Maria"); 
         this.btnSearch.click(); 
-    }
-
-    clickPhisicalSpecialty(){
-        //this.btnSearch.click(); 
-        this.btnFisica.click();
-    }
-
-    clickLanguageSpecialty(){
-        //this.btnSearch.click(); 
-        this.btnFisica.click();
-    }
-
-    clickOcupationalSpecialty(){
-        //this.btnSearch.click(); 
-        this.btnFisica.click();
     }
 
     /**
