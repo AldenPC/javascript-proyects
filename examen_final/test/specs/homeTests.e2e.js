@@ -1,4 +1,5 @@
 const HomePage = require('../pageobjects/home.page');
+const nombre = "Maria";
 
 describe('Punto 1 de examen', () => {
     beforeEach(()=>{
@@ -16,8 +17,8 @@ describe('Punto 1 de examen', () => {
     });
     it('Usuario es dirigido a la página de resultados y el primer resultado es un especialista con el nombre de Maria.', () => {
         HomePage.searchText();
-        expect(browser).toHaveUrlContaining("Maria");
-        expect(HomePage.firstResult).toHaveTextContaining("Maria");
+        expect(browser).toHaveUrlContaining(nombre);
+        expect(HomePage.firstResult).toHaveTextContaining(nombre);
     });
 });
 

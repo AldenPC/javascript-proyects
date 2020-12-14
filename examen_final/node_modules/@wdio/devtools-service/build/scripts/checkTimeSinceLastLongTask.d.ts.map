@@ -1,0 +1,1 @@
+{"version":3,"file":"checkTimeSinceLastLongTask.d.ts","sourceRoot":"","sources":["../../src/scripts/checkTimeSinceLastLongTask.ts"],"names":[],"mappings":"AAAA,OAAO,CAAC,MAAM,CAAC;IACX,UAAU,MAAM;QACZ,gBAAgB,EAAE,MAAM,CAAA;QACxB,yBAAyB,EAAE,mBAAmB,CAAA;KACjD;CACJ;AAKD,MAAM,CAAC,OAAO,UAAU,0BAA0B,qBAcjD"}
