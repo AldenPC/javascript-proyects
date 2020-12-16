@@ -1,12 +1,11 @@
 const HomePage = require('../pageobjects/home.page');
-const nombre = "Maria";
 
 describe('Punto 1 de examen', () => {
     beforeEach(()=>{
         HomePage.open();
     })
     it('El sitio no redirige a ninguna pagina.', () => {
-        const currentUrl="https://develop.terapeutica.digital/#/";
+        const currentUrl=browser.getUrl();
         HomePage.clickSearch();
         expect(browser).toHaveUrl(currentUrl);
     });
@@ -17,8 +16,8 @@ describe('Punto 1 de examen', () => {
     });
     it('Usuario es dirigido a la página de resultados y el primer resultado es un especialista con el nombre de Maria.', () => {
         HomePage.searchText();
-        expect(browser).toHaveUrlContaining(nombre);
-        expect(HomePage.firstResult).toHaveTextContaining(nombre);
+        expect(browser).toHaveUrlContaining(HomePage.nombre);
+        expect(HomePage.firstResult).toHaveTextContaining(HomePage.nombre);
     });
 });
 

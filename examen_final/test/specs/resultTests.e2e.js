@@ -3,6 +3,7 @@ const HomePage = require('../pageobjects/home.page');
 const especialidad = ["phisical", "language", "ocupational"];
 const nombre = "Maria";
 
+
 describe('Punto 2 de examen', () => {
     beforeEach(()=>{
         HomePage.open();
@@ -33,6 +34,21 @@ describe('Punto 2 de examen', () => {
     it('Al cambiar entre mapa y lista el mapa aparece de la página.', () => {
         ResultsPage.resultsMapVisible();
         expect(ResultsPage.googleMap).toBeVisible();
+    });
+    // it('Ultimo punto', () => {
+    //     browser.url('https://develop.terapeutica.digital/#/search?q=Maria');
+    //         browser.setupInterceptor(); 
+    //         browser.expectRequest('POST', 'https://javito-stage.herokuapp.com/v1/specialists/search',200); 
+    //         $('.strip_list > a').click() 
+    //         browser.expectRequest('GET','https://javito-stage.herokuapp.com/v1/specialist/37378b04-4b69-452e-9fad-e83959388f41', 200);
+    //         browser.pause(1000); 
+    //         browser.assertRequests(); 
+    // });
+    it('El webservice correcto es llamado al ingresar a la página de detalles de perfil de un profesional.', () => {
+        const mock = browser.mock('https://javito-stage.herokuapp.com/v1/specialist/37378b04-4b69-452e-9fad-e83959388f41')
+        HomePage.searchText()
+        ResultsPage.btnPerfil.click()
+        expect(mock).toBeRequested()
     });
 });
 

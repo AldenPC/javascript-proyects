@@ -7,6 +7,7 @@ class HomePage extends Page {
     /**
      * define selectors using getter methods
      */
+    get nombre () { return ('Maria') }
     get btnSearch () { return $('.btn_search') }
     get btnOcupational () { return $('label[for=ocupational]') }
     get searchInput () { return $('#search-input') }

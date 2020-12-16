@@ -16,6 +16,7 @@ class ResultPage extends Page {
     get btnMap () { return $('.icon-map-1') }
     get googleMap () { return $('.google-map') }
     get btnList () { return $('.icon-th-list') }
+    get btnPerfil () { return $('.btn_listing') }
 
     /**
      * a method to encapsule automation code to interact with the page
